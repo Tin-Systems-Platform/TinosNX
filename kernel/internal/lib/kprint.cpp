@@ -1,5 +1,6 @@
 #include "kprint.h"
 #include <stdint.h>
+#include "io.h"
 
 #define VGA_WIDTH 80
 #define VGA_HEIGHT 25
@@ -15,11 +16,7 @@ int cursor_y = 0;
 
 void KPrint::qemu_dbg(const char* str) {
     while (*str) {
-        __asm__ volatile(
-            "outb %%al, $0xE9"
-            :
-            : "a"(*str)
-        );
+        IO::outb(0xE9, *str); // Write character to QEMU debug console
         str++;
     }
 }
