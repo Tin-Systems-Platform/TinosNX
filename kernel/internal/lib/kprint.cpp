@@ -16,15 +16,14 @@ int cursor_y = 0;
 void KPrint::qemu_dbg(const char* str) {
     while (*str) {
         __asm__ volatile(
-            "movb %0, %%al\n"
-            "outb %%al, $0xE9\n"
+            "outb %%al, $0xE9"
             :
-            : "r"(*str)
-            : "%al"
+            : "a"(*str)
         );
         str++;
     }
 }
+
 
 uint16_t vga_entry(char c, uint8_t color) {
     return ((uint16_t)color << 8) | (uint8_t)c;
