@@ -1,0 +1,4 @@
+*.h linguist-language=cpp
+
+*.cmake linguist-documentation=true
+CMakeLists.txt linguist-documentation=true
