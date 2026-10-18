@@ -1,4 +1,5 @@
 #include "mb.h"
+#include "init.h"
 
 __attribute__((section(".multiboot")))
 multiboot_header_t mboot_header = {
@@ -9,6 +10,7 @@ multiboot_header_t mboot_header = {
 
 extern "C" void kernel_main(struct multiboot_info_t* mboot_info, uint32_t magic)
 {
+    Init::init();
     for (;;)
     {
         __asm__ volatile("hlt");
