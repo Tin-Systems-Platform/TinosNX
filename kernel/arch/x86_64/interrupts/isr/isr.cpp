@@ -4,6 +4,6 @@
 
 extern "C" void isr_handler(struct regs* r) {
     // Temporary interrupt diagnostic.
-    KPrint::kprint("Received interrupt: ");
-    KPrint::kprint("Interrupt number: ");
+    KPrint::qemu_dbg("Received interrupt: \n");
+    KPrint::qemu_dbg("Interrupt number: \n");
 }

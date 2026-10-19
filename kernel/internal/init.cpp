@@ -16,6 +16,9 @@ void Init::init() {
     KPrint::kprint("Remapping PIC...\n");
 
     remap_pic(0x20, 0x28);
+    KPrint::kprint("PIC remapped successfully!\n");
+
+    asm volatile("sti");
 
     KPrint::qemu_dbg("Hello from Kernel's QEMU debug console method\n");
     KPrint::kprint("Kernel initialized successfully!\n");
