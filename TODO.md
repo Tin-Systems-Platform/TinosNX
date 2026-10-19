@@ -4,9 +4,9 @@ This TODO outlines the requirements and planned features for each subsystem of t
 
 ## Kernel
 
-- [ ] Boot and kernel initialization
-- [ ] Global Descriptor Table (GDT)
-- [ ] Interrupt Descriptor Table (IDT)
+- [X] Boot and kernel initialization
+- [X] Global Descriptor Table (GDT)
+- [X] Interrupt Descriptor Table (IDT)
 - [ ] Exception and interrupt handling
 - [ ] Timer subsystem
 - [ ] Physical memory manager
